@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <meta name="generator" content="Google Web Designer 16.4.0.0711">
+
+  <style id="gwd-text-style">
+    p {
+      margin: 0px;
+    }
+    h1 {
+      margin: 0px;
+    }
+    h2 {
+      margin: 0px;
+    }
+    h3 {
+      margin: 0px;
+    }
+  </style>
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 200vh;
+      margin: 0px;
+      overflow-x: hidden;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: transparent;
+      transform-style: preserve-3d;
+    }
+
+    body * {
+      transform-style: preserve-3d;
+    }
+
+    .gwd-img-1lee {
+      position: fixed;
+      width: 675px;
+      height: 675px;
+      top: 60vh;
+      left: -121px;
+      z-index: 10;
+      transform: translateY(-50%);
+    }
+
+    .gwd-img-1fgi {
+      position: absolute;
+      width: 675px;
+      height: auto;
+      left: -121px;
+      top: 60vh;
+      z-index: 1;
+      transform: translateY(-50%);
+      display: block;
+    }
+
+    .cta-button {
+      position: fixed;
+      z-index: 20;
+      top: 85vh;
+      left: 216.5px;
+      transform: translateX(-50%); 
+      
+      background-color: red;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+
+<body class="htmlNoPages">
+
+  <img src="assets/wolke.png.png" id="wolke" class="gwd-img-1lee">
+  <img src="assets/produkt.png.png" id="produkt" class="gwd-img-1fgi">
+
+  <a href="https://www.amazon.de/GRINTUSS-Erwachsene-mit-Poliresin-Hustensaft/dp/B08PVRYRFW/ref=sr_1_6?dib=eyJ2IjoiMSJ9.91rGHtr1rPWkhOHcZLzxC9VREWST9WGjSSu8uWsL9jGAAWcv_skwjUKJksbFy3Hy7c8qUvRL0QZ_f3FKcxnIGNyLjma2QS0SLDqWM7gLrhiMP0M3n-o6uxb1YOPGmXHo1WtvWCv3t85ijjaJEdRlSvthLk5CUot1-bi8R6skfAOHuyljiZ6eoV7XhOMeWbTPZflX0_-Pz7H5aMfaeDLlpU1Qyc_t6qvtWEGItXRscP_gtHNn5me_ugiakz_7ViWqe4_JG8sNw5migoyzInk9mKrwUtZZGZtPRY2mMASKMHI.L0_Pym1fqK5Vbm-TSYbynlEN4xOwqIG9ZqfEkJ8UVFE&dib_tag=se&keywords=grintuss+hustensaft&qid=1755174229&sr=8-6" target="_blank" rel="noopener noreferrer" id="shop-button" class="cta-button">
+    Shop now
+  </a>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const wolke = document.getElementById('wolke');
+      const button = document.getElementById('shop-button');
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+
+        // Wolke bewegt sich 1:1 mit dem Scrollen (100% Geschwindigkeit)
+        wolke.style.transform = `translateY(calc(-50% - ${scrollTop}px))`;
+        
+        // GEÄNDERT: Button bewegt sich jetzt nur noch mit 20% der Geschwindigkeit (80% langsamer)
+        const buttonScroll = scrollTop * 0.2; 
+        button.style.transform = `translateX(-50%) translateY(calc(0px - ${buttonScroll}px))`;
+      });
+    });
+  </script>
+</body>
+
+</html>
